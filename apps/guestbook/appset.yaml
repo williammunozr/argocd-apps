@@ -7,7 +7,6 @@ spec:
     - list:
         elements:
           - cluster: engineering-dev
-            dest: in-cluster
   template:
     metadata:
       name: '{{cluster}}-guestbook'
@@ -23,5 +22,5 @@ spec:
         targetRevision: HEAD
         path: applicationset/examples/list-generator/guestbook/{{cluster}}
       destination:
-        server: '{{dest}}'
+        name: 'in-cluster'
         namespace: guestbook
